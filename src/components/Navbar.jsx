@@ -1,5 +1,4 @@
 import logo from "../assets/profilelogo.png";
-import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
