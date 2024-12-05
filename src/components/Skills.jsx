@@ -4,13 +4,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
-import {
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { SiJavascript, SiHtml5, SiCss3, SiTailwindcss } from "react-icons/si";
 
 const Skills = () => {
   return (
@@ -20,29 +14,29 @@ const Skills = () => {
       </h2>
       <div className="flex flex-wrap items-center justify-center gap-6">
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiHtml5 className="text-7xl text-orange-500" />
+          <SiHtml5 className="text-5xl text-orange-500" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiCss3 className="text-7xl text-blue-500" />
+          <SiCss3 className="text-5xl text-blue-500" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiTailwindcss className="text-7xl text-cyan-400" />
+          <SiTailwindcss className="text-5xl text-cyan-400" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiJavascript className="text-7xl text-yellow-400" />
+          <SiJavascript className="text-5xl text-yellow-400" />
         </div>
 
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiMongodb className="text-7xl text-green-500" />
+          <SiMongodb className="text-5xl text-green-500" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <SiExpress className="text-7xl text-gray-300" />
+          <SiExpress className="text-5xl text-gray-300" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <RiReactjsLine className="text-7xl text-cyan-400" />
+          <RiReactjsLine className="text-5xl text-cyan-400" />
         </div>
         <div className="rounded-2xl border-4 border-neutral-800 p-6 shadow-lg hover:scale-110 transition-transform">
-          <FaNodeJs className="text-7xl text-green-500" />
+          <FaNodeJs className="text-5xl text-green-500" />
         </div>
       </div>
     </div>
