@@ -5,7 +5,6 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Project from "./components/Projects";
-import Sidebar from "./components/Sidebar";
 
 const App = () => {
   return (
@@ -26,7 +25,6 @@ const App = () => {
         <Skills />
         <Experience />
         <Project />
-        {/* <Sidebar /> */}
       </div>
     </div>
   );
