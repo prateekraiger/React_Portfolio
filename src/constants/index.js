@@ -81,13 +81,7 @@ export const PROJECTS = [
     image: project4,
     description:
       "DevFolio: A showcase of my frontend projects, blending creativity and functionality into seamless web experiences",
-    technologies: ["HTML", "CSS", "Js","Vite"],
+    technologies: ["HTML", "CSS", "Js", "Vite"],
     link: "https://devfolio-2lv.pages.dev/",
   },
 ];
-
-export const CONTACT = {
-  address: "Bhopal India",
-  phoneNo: "+91 9407876845",
-  email: "prateekraiger123@gmail.com",
-};

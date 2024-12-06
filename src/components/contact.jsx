@@ -1,6 +1,6 @@
 import { useInView } from "framer-motion";
-import { motion } from "framer-motion"; // Corrected import
-import { useRef } from "react"; // Import useRef
+import { motion } from "framer-motion";
+import { useRef } from "react";
 import ContactSvg from "./ContactSvg";
 
 const listVariant = {
@@ -9,7 +9,7 @@ const listVariant = {
     opacity: 0,
   },
   animate: {
-    x: 0, // Changed to 0 for proper animation
+    x: 0,
     opacity: 1,
     transition: {
       duration: 0.5,
@@ -24,7 +24,7 @@ const itemVariant = {
     opacity: 0,
   },
   animate: {
-    x: 0, // Changed to 0 for proper animation
+    x: 0,
     opacity: 1,
   },
 };
@@ -41,11 +41,16 @@ const Contact = () => {
       initial="initial"
       animate={isInView ? "animate" : "initial"}
     >
-      <div className="cSection w-full md:w-1/2 p-4">
+      <div className="w-full md:w-1/2 p-4">
         <motion.form className="bg-black text-white p-6 rounded-lg shadow-md">
-          <motion.h1 variants={itemVariant} className="text-2xl font-bold mb-4">
+          <motion.h2
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.5 }}
+            className="my-20 text-center text-4xl"
+          >
             Let's Keep in Touch
-          </motion.h1>
+          </motion.h2>
           <motion.div variants={itemVariant} className="formItem mb-4">
             <label className="block text-sm font-medium">Name</label>
             <input
