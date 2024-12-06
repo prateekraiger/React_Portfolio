@@ -55,27 +55,34 @@ export const PROJECTS = [
   {
     title: "Codefit Gym Website",
     image: project1,
-    description: "It is Gym Website",
-    technologies: ["HTML", "CSS", "Js", "Node.js"],
+    description:
+      "CodeFit - A responsive gym website for a fit and healthy lifestyle, empowering users to reach their fitness goals.",
+    technologies: ["HTML", "CSS", "Js"],
+    link: "https://prateekraiger.github.io/CodeFit-gym-website/",
   },
   {
     title: "Grilli Restaurant",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Js", "Node.js"],
+      "Grilli - Responsive Web Design for Expertly Grilled Cuisine, Bringing Flavor to Life with a Modern Dining Experience.",
+    technologies: ["HTML", "CSS", "Js"],
+    link: "https://grilli-50z.pages.dev/",
   },
   {
     title: "Robin - Ai ChatBot",
     image: project3,
-    description: "",
-    technologies: ["HTML", "CSS", "Js", "Node.js"],
+    description:
+      "Robin AI: A smart and conversational chatbot designed to enhance user interaction and deliver seamless assistance",
+    technologies: ["HTML", "Tailwind CSS", "Js", "Node.js"],
+    link: "https://robin-ai-nine.vercel.app/",
   },
   {
-    title: "Simon Says Game",
+    title: "DevFolio",
     image: project4,
-    description: "",
-    technologies: ["HTML", "CSS", "Js"],
+    description:
+      "DevFolio: A showcase of my frontend projects, blending creativity and functionality into seamless web experiences",
+    technologies: ["HTML", "CSS", "Js","Vite"],
+    link: "https://devfolio-2lv.pages.dev/",
   },
 ];
 
