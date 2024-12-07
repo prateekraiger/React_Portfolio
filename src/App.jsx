@@ -19,14 +19,14 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
       <button
         onClick={resetErrorBoundary}
         className="mt-4 px-4 py-2 bg-cyan-500 text-white rounded"
-      > 
+      >
         Try again
       </button>
     </div>
   );
 };
 
-// Loading Spinner Component
+// Loading Component
 const LoadingSpinner = () => (
   <div className="fixed inset-0 flex items-center justify-center bg-black">
     <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-cyan-500"></div>
