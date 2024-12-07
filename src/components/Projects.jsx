@@ -1,45 +1,134 @@
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import { PROJECTS } from "../constants";
 
 const Projects = () => {
+  const projectRef = useRef(null);
+
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 }, // Animate from below
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
+  };
+
+  const hoverVariants = {
+    hover: {
+      scale: 1.05,
+      y: -10,
+      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+
   return (
-    <div className="border-b border-neutral-900 pb-4">
-      <h2 className="my-20 text-center text-4xl">Projects</h2>
-      <div>
-        {PROJECTS.map((project, index) => (
-          <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-            <div className="w-full lg:w-1/4">
-              <img
-                src={project.image}
-                width={150}
-                height={150}
-                alt={project.title}
-                className="mb-6 rounded"
-              />
-            </div>
-            <div className="w-full lg:w-3/4 flex flex-col justify-center">
-              <h2 className="mb-2 font-semibold">{project.title}</h2>
-              <p className="mb-4 text-neutral-400">{project.description}</p>
-              <a
-                href={project.link}
-                className="text-blue-500 hover:underline mb-4"
+    <motion.div
+      className="pt-16"
+      id="project"
+      ref={projectRef}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
+      <div className="px-4">
+        <motion.h2
+          className="mb-8 text-center text-3xl font-medium lg:text-4xl"
+          variants={headingVariants} // Heading animation
+          whileInView="visible"
+          initial="hidden"
+        >
+          Projects
+        </motion.h2>
+        <div className="flex flex-wrap justify-center">
+          {PROJECTS.map((project, index) => (
+            <motion.div
+              key={index}
+              className="flex w-full flex-col p-4 md:w-1/2 lg:w-1/3"
+              variants={cardVariants}
+              whileInView="visible"
+              initial="hidden"
+            >
+              <motion.div
+                className="flex flex-grow flex-col overflow-hidden rounded-lg border border-purple-300/20"
+                variants={hoverVariants}
               >
-                View Project
-              </a>
-              <div className="flex flex-wrap">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="mb-2 mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-50 w-full object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  />
+                </a>
+                <div className="p-6">
+                  <h3 className="mb-2 text-lg font-medium lg:text-2xl">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4">{project.description}</p>
+                  <div className="mb-4">
+                    <strong>Tech Stack:</strong>
+                    <ul>
+                      {project.technologies.map((tech, techIndex) => (
+                        <li
+                          key={techIndex}
+                          className="mb-1 mr-2 inline-block rounded-full border-2 border-pink-500/30 px-3 py-1 text-sm font-semibold"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-700"
+                    whileHover={{
+                      scale: 1.2,
+                      backgroundColor: "rgb(128, 90, 213)",
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+                    View Project
+                  </motion.a>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

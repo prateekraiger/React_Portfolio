@@ -44,8 +44,8 @@ const Navbar = () => {
     { name: "Home", link: "#hero", icon: <FaHome /> },
     { name: "About", link: "#about", icon: <FaUser /> },
     { name: "Skills", link: "#skills", icon: <FaCode /> },
-    { name: "Experience", link: "#experience", icon: <FaBriefcase /> },
     { name: "Projects", link: "#projects", icon: <FaProjectDiagram /> },
+    { name: "Experience", link: "#experience", icon: <FaBriefcase /> },
     { name: "Contact", link: "#contact", icon: <FaEnvelope /> },
   ];
 

@@ -67,12 +67,12 @@ const App = () => {
               <Skills />
             </section>
 
-            <section id="experience">
-              <Experience />
-            </section>
-
             <section id="projects">
               <Projects />
+            </section>
+
+            <section id="experience">
+              <Experience />
             </section>
 
             <section id="contact">

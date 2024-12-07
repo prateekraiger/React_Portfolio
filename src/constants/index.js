@@ -84,4 +84,12 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "Js", "Vite"],
     link: "https://devfolio-2lv.pages.dev/",
   },
+  {
+    title: "Robin - Ai ChatBot",
+    image: project3,
+    description:
+      "Robin AI: A smart and conversational chatbot designed to enhance user interaction and deliver seamless assistance",
+    technologies: ["HTML", "Tailwind CSS", "Js", "Node.js"],
+    link: "https://robin-ai-nine.vercel.app/",
+  },
 ];
