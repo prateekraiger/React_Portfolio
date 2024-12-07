@@ -42,12 +42,12 @@ const Contact = () => {
       animate={isInView ? "animate" : "initial"}
     >
       <div className="w-full md:w-1/2 p-4">
-        <motion.form className="bg-black text-white p-6 rounded-lg shadow-md">
+        <motion.form className="bg-slate-800 text-slate-300 p-6 rounded-lg shadow-md">
           <motion.h2
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.5 }}
-            className="my-20 text-center text-4xl"
+            className="my-20 text-center text-4xl text-indigo-400"
           >
             Let's Keep in Touch
           </motion.h2>
@@ -56,7 +56,7 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="mt-1 block w-full border bg-gray-800 border-gray-600 rounded-md shadow-sm p-2 focus:outline-none focus:ring focus:ring-blue-500"
+              className="mt-1 block w-full border bg-slate-700 border-slate-600 rounded-md shadow-sm p-2 focus:outline-none focus:ring focus:ring-indigo-500"
             />
           </motion.div>
           <motion.div variants={itemVariant} className="formItem mb-4">
@@ -64,7 +64,7 @@ const Contact = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="mt-1 block w-full border border-gray-600 bg-gray-800 rounded-md shadow-sm p-2 focus:outline-none focus:ring focus:ring-blue-500"
+              className="mt-1 block w-full border border-slate-600 bg-slate-700 rounded-md shadow-sm p-2 focus:outline-none focus:ring focus:ring-indigo-500"
             />
           </motion.div>
           <motion.div variants={itemVariant} className="formItem mb-4">
@@ -72,10 +72,10 @@ const Contact = () => {
             <textarea
               rows={10}
               placeholder="Write Your Message..."
-              className="mt-1 block w-full border border-gray-600 rounded-md shadow-sm p-2 bg-gray-800 text-white focus:outline-none focus:ring focus:ring-blue-500"
+              className="mt-1 block w-full border border-slate-600 rounded-md shadow-sm p-2 bg-slate-700 text-slate-300 focus:outline-none focus:ring focus:ring-indigo-500"
             ></textarea>
           </motion.div>
-          <button className="formButton w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200">
+          <button className="formButton w-full bg-indigo-600 text-white font-semibold py-2 rounded-md hover:bg-indigo-500 transition duration-200">
             Send
           </button>
         </motion.form>
