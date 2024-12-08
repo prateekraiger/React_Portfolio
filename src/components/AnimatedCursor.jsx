@@ -3,10 +3,15 @@ import React, { useEffect, useState } from "react";
 const AnimatedCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      // Use requestAnimationFrame for smoother updates
+      requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
     };
 
     const handleMouseOver = () => setIsHovering(true);
@@ -29,8 +34,11 @@ const AnimatedCursor = () => {
         el.removeEventListener("mouseover", handleMouseOver);
         el.removeEventListener("mouseout", handleMouseOut);
       });
+      setIsMounted(false);
     };
   }, []);
+
+  if (!isMounted) return null; // Prevent rendering until mounted
 
   return (
     <>
