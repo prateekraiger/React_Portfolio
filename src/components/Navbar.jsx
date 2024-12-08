@@ -54,7 +54,7 @@ const Navbar = () => {
       {/* Top Header */}
       <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-screen-lg mx-auto px-4 py-4">
-          <div className="flex items-center justify-between bg-black/20 backdrop-blur-md rounded-full px-6 py-3">
+          <div className="flex items-center justify-between bg-black/20 rounded-full px-6 py-3">
             {/* Logo Section */}
             <div>
               <img className="w-10" src={logo} alt="Logo" />
@@ -96,10 +96,10 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
+            className="fixed bottom-0 left-0 right-0 z-50"
           >
-            <div className="flex items-center justify-center bg-black/30 backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
-              <div className="flex items-center gap-6 text-white">
+            <div className="container mx-auto flex justify-center">
+              <div className="flex items-center gap-6 text-white bg-black/30 rounded-full px-6 py-3">
                 {navItems.map((item) => (
                   <a
                     key={item.name}

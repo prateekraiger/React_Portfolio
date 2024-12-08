@@ -1,9 +1,10 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { motion } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
-import { motion, AnimatePresence } from "framer-motion";
+import Preloader from "./components/Preloader"; // Import the new preloader component
 
-// Lazy load components for better performance
+// Lazy-loaded components
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
@@ -12,7 +13,7 @@ const Experience = lazy(() => import("./components/Experience"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 
-// Enhanced Error Fallback Component
+// Error Fallback Component
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
   return (
     <motion.div
@@ -61,11 +62,11 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
   );
 };
 
-// Enhanced Loading Component
+// Loading Spinner Component
 const LoadingSpinner = () => {
   const [dots, setDots] = useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setDots((prev) => (prev.length >= 3 ? "" : prev + "."));
     }, 500);
@@ -101,6 +102,16 @@ const LoadingSpinner = () => {
 };
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <Preloader onLoadComplete={handleLoadComplete} />;
+  }
+
   return (
     <ErrorBoundary
       FallbackComponent={ErrorFallback}
@@ -129,7 +140,6 @@ const App = () => {
                 className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,#312e81_50%,#1e293b_75%)] bg-[size:400%_400%] opacity-50"
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(71,85,105,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(71,85,105,0.1)_1px,transparent_1px)] bg-[size:24px_24px] opacity-30"></div>
-              {/* Add vertical and horizontal lines of color */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
             </div>
           </div>
