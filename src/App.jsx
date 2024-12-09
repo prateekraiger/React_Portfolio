@@ -125,7 +125,7 @@ const App = () => {
           className="relative overflow-x-hidden text-slate-300 antialiased
           selection:bg-indigo-500/50 selection:text-white"
         >
-          {/* Enhanced Animated Background */}
+          {/* Animation Section*/}
           <div className="fixed inset-0 -z-10">
             <div className="absolute inset-0 bg-slate-900">
               <motion.div
