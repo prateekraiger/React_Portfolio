@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import AnimatedCursor from "react-animated-cursor";
 import Preloader from "./components/Preloader";
 
-// Lazy-loaded components
+// Lazy-loaded components 
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
