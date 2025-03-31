@@ -1,10 +1,10 @@
 import React, { Suspense, lazy, useState, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { motion } from "framer-motion";
-import AnimatedCursor from "react-animated-cursor";
+import TextCursor from "./components/TextCursor";
 import Preloader from "./components/Preloader";
 
-// Lazy-loaded components 
+// Lazy-loaded components
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
@@ -15,6 +15,10 @@ const Contact = lazy(() => import("./components/Contact"));
 
 // Error Fallback Component
 const ErrorFallback = ({ error, resetErrorBoundary }) => {
+  useEffect(() => {
+    console.log("TextCursor Mounted");
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -116,7 +120,9 @@ const App = () => {
       FallbackComponent={ErrorFallback}
       onReset={() => window.location.reload()}
     >
+ 
       <Suspense fallback={<LoadingSpinner />}>
+        {/* Remove TextCursor from here since we added it above */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -135,7 +141,7 @@ const App = () => {
                   duration: 15,
                   repeat: Infinity,
                   repeatType: "reverse",
-                  ease: "linear"
+                  ease: "linear",
                 }}
                 className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,#312e81_50%,#1e293b_75%)] bg-[size:400%_400%] opacity-50"
               />
@@ -143,7 +149,6 @@ const App = () => {
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
             </div>
           </div>
-
           {/* Main Content with Enhanced Layout */}
           <div className="container mx-auto px-4 md:px-8 space-y-16 max-w-6xl">
             <Navbar />
@@ -161,14 +166,14 @@ const App = () => {
                 key={id}
                 id={id}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ 
-                  opacity: 1, 
+                whileInView={{
+                  opacity: 1,
                   y: 0,
                   transition: {
                     type: "spring",
                     duration: 0.6,
-                    bounce: 0.2
-                  }
+                    bounce: 0.2,
+                  },
                 }}
                 viewport={{ once: true, margin: "-50px" }}
                 className="relative group"
@@ -183,38 +188,6 @@ const App = () => {
               </motion.section>
             ))}
           </div>
-
-          {/* Optimized Animated Cursor */}
-          <AnimatedCursor
-            innerSize={12}
-            outerSize={20}
-            color="99, 102, 241"
-            outerAlpha={0.4}
-            innerScale={1.5}
-            outerScale={3}
-            outerStyle={{
-              border: "2px solid rgba(99, 102, 241, 0.7)",
-              backgroundColor: "transparent",
-              mixBlendMode: "screen",
-            }}
-            innerStyle={{
-              backgroundColor: "rgba(99, 102, 241, 0.7)",
-              mixBlendMode: "screen",
-            }}
-            clickables={[
-              "a",
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              "label[for]",
-              "select",
-              "textarea",
-              "button",
-              ".link",
-            ]}
-          />
         </motion.div>
       </Suspense>
     </ErrorBoundary>

@@ -2,6 +2,9 @@ import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
 import project4 from "../assets/projects/project4.png";
+import project5 from "../assets/projects/project5.png";
+import project6 from "../assets/projects/project6.png"; 
+
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and
                               scalable web applications. With 1 year of hands-on experience,
@@ -53,6 +56,22 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "1-Piece",
+    image: project6,
+    description:
+      "This is a One Piece-themed interactive website showcasing Luffy's Gear 5 transformation and the awakening of Joy Boy. The project features an immersive video experience, responsive animations, and dynamic elements to bring the legendary transformation to life.",
+    technologies: ["Reactjs", "Tailwind CSS", "GSAP"],
+    link: "https://1-piece.vercel.app/",
+  },
+  {
+    title: "GitHub Portfolio",
+    image: project5,
+    description:
+      "A responsive Next.js + Tailwind CSS portfolio template for GitHub users. Dynamically fetches and displays GitHub data via API to create a personalized developer showcase.",
+    technologies: ["Nextjs", "Tailwind CSS", "React", "GitHub API", "Node.js"],
+    link: "https://prartik-git-port.vercel.app/",
+  },
+  {
     title: "Codefit Gym Website",
     image: project1,
     description:
@@ -83,13 +102,5 @@ export const PROJECTS = [
       "DevFolio: A showcase of my frontend projects, blending creativity and functionality into seamless web experiences",
     technologies: ["HTML", "CSS", "Js", "Vite"],
     link: "https://devfolio-2lv.pages.dev/",
-  },
-  {
-    title: "Robin - Ai ChatBot",
-    image: project3,
-    description:
-      "Robin AI: A smart and conversational chatbot designed to enhance user interaction and deliver seamless assistance",
-    technologies: ["HTML", "Tailwind CSS", "Js", "Node.js"],
-    link: "https://robin-ai-nine.vercel.app/",
   },
 ];
